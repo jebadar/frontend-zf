@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginComponent } from '../login/login.component';
+
 declare var $ :any;
 
 @Component({
@@ -41,6 +43,10 @@ toggle() {
     });
     
     }); 
+    $('.login-window').click(function (e){
+      e.preventDefault();
+      $('.overlay').removeClass('close').addClass('open');
+    });
     $(document).ready(function(){
 
       $(".detailDiv").hide();
