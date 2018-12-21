@@ -23,9 +23,34 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/css/external/jquery.selectbox.css",
+              "src/assets/css/gozha-nav.css",
+              "src/assets/rs-plugin/css/settings.css",
+              "src/assets/css/style3860.css",
+              "src/assets/css/flexslider.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+           "src/assets/js/external/jquery-1.10.1.min.js",
+           "src/assets/js/external/modernizr.custom.js",
+            
+            
+           "src/assets/netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js",
+            
+            
+           "src/assets/rs-plugin/js/jquery.themepunch.revolution.min.js",
+           "src/assets/rs-plugin/js/jquery.themepunch.plugins.min.js",
+           "src/assets/js/external/jquery-migrate-1.2.1.min.js",
+           "src/assets/js/jquery.mobile.menu.js",
+           "src/assets/js/external/jquery.selectbox-0.2.min.js",
+           "src/assets/js/external/jquery.raty.js",
+           "src/assets/js/external/form-element.js",
+           "src/assets/js/form.js",
+           "src/assets/js/external/twitterfeed.js",
+           "src/assets/js/custom.js",
+           "src/assets/js/jquery.flexslider.js",
+           "src/assets/js/owl.carousel.js"
+           ]
           },
           "configurations": {
             "production": {

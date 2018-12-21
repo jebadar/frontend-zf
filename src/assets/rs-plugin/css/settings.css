@@ -1752,7 +1752,7 @@ border-style:none;
 
 
 
-.tp-transparentimg {	content:"url(../assets/transparent.png)"}
+.tp-transparentimg {	}
 .tp-3d				{	-webkit-transform-style: preserve-3d;
 						 -webkit-transform-origin: 50% 50%;
 					}
