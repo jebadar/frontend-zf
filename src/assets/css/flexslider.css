@@ -69,13 +69,13 @@ html[xmlns] .slides {display: block;}
 .flex-direction-nav .flex-next {
 	background-position: -37px 0px;
    right: 0.4%;
-top: 120px;
+top: 67px;
 }
 .flex-direction-nav .flex-next:hover {
 	 background: url(../images/img-sp-hvr.png) no-repeat 0px 0px;
 	background-position: -37px 0px;
    right: 0.4%;
-top: 120px;
+top: 67px;
 }
 .w3l-action-icon i:hover {
     color: #de312a;
@@ -88,7 +88,7 @@ top: 180px;
 }
 .movies .flex-direction-nav .flex-prev {top: 180px;
 left: 0px;}
-.flex-direction-nav .flex-prev:hover {top: 120px;
+.flex-direction-nav .flex-prev:hover {top: 67px;
  background: url(../images/img-sp-hvr.png) no-repeat 0px 0px;
 left:0px;}
 
