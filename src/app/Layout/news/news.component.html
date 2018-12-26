@@ -1,0 +1,113 @@
+
+
+   
+<ngx-slick-carousel *ngIf="category === 'news'" class="carousel" 
+#slickModal="slick-carousel" 
+[config]="slideConfig" 
+(init)="slickInit($event)"
+(breakpoint)="breakpoint($event)"
+(afterChange)="afterChange($event)"
+(beforeChange)="beforeChange($event)">
+<div ngxSlickItem *ngFor="let slide of totalItems " style="max-width:253px;padding: 5px;" class="slide">
+
+    <div class="col-md-12 w3l-movie-gride-agile grid">
+        <figure class="effect-sadie"><img src={{assetUrl+slide.thumbnail}} title="album-name" class="img-responsive" alt=" " />
+          <div class="w3l-action-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
+       <div class="w3l-movie-text">
+        <figcaption>
+                       
+    <h2>{{slide.title}}</h2>
+    <p>{{slide.length}}</p>
+    <div class="mid-2 agile_mid_2_home view">
+            <p style="text-align:left">{{slide.category}}</p>
+            <div class="block-stars">
+              <ul class="w3l-ratings">
+                <p style="text-align:right">in 5 hours</p>
+              </ul>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+    </figcaption>
+    </div>		
+                 
+                  </figure>
+                      
+       </div> 
+    
+
+</div>
+</ngx-slick-carousel>
+
+
+   
+<ngx-slick-carousel *ngIf="category === 'talkshows'" class="carousel" 
+#slickModal="slick-carousel" 
+[config]="slideConfig" 
+(init)="slickInit($event)"
+(breakpoint)="breakpoint($event)"
+(afterChange)="afterChange($event)"
+(beforeChange)="beforeChange($event)">
+<div ngxSlickItem *ngFor="let slide of totalItems " style="max-width:253px;padding: 5px;" class="slide">
+
+    <div class="col-md-12 w3l-movie-gride-agile grid">
+        <figure class="effect-sadie"><img src={{assetUrl+slide.thumbnail}} title="album-name" class="img-responsive" alt=" " />
+          <div class="w3l-action-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
+       <div class="w3l-movie-text">
+        <figcaption>
+                       
+    <h2>{{slide.title}}</h2>
+    <p>{{slide.length}}</p>
+    <div class="mid-2 agile_mid_2_home view">
+            <p style="text-align:left">{{slide.category}}</p>
+            <div class="block-stars">
+              <ul class="w3l-ratings">
+                <p style="text-align:right">in 5 hours</p>
+              </ul>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+    </figcaption>
+    </div>		
+                 
+                  </figure>
+                      
+       </div> 
+    
+
+</div>
+</ngx-slick-carousel>
+<ngx-slick-carousel *ngIf="category === 'entertainment' || category === 'sports' || category === 'drama' || category === 'kids' || category === 'islamic'" class="carousel" 
+#slickModal="slick-carousel" 
+[config]="slideConfig" 
+(init)="slickInit($event)"
+(breakpoint)="breakpoint($event)"
+(afterChange)="afterChange($event)"
+(beforeChange)="beforeChange($event)">
+<div ngxSlickItem *ngFor="let slide of totalItems " style="max-width:253px;padding: 5px;" class="slide">
+
+    <div class="col-md-12 w3l-movie-gride-agile grid">
+        <figure class="effect-sadie"><img src={{assetUrl+slide.thumbnail}} title="album-name" class="img-responsive" alt=" " />
+          <div class="w3l-action-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
+       <div class="w3l-movie-text">
+        <figcaption>
+                       
+    <h2>{{slide.title}}</h2>
+    <p>{{slide.length}}</p>
+    <div class="mid-2 agile_mid_2_home view">
+            <p style="text-align:left">{{slide.category}}</p>
+            <div class="block-stars">
+              <ul class="w3l-ratings">
+                <p style="text-align:right">in 5 hours</p>
+              </ul>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+    </figcaption>
+    </div>		
+                 
+                  </figure>
+                      
+       </div>
+
+</div>
+</ngx-slick-carousel>

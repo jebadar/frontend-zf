@@ -1,189 +1,31 @@
-<div id="owl-demo" class="owl-carousel owl-theme hh" style="display:flex;">
-    <!-- <div class="item">
-                
-               <div class="movie-beta__item ">
-              
-               <figure class="effect-sadie">
-              
-                  <a href="single.html" class="hvr-shutter-out-horizontal"><img alt='' src="/assets/images/movie/movie-sample1.jpg">
-                   
+    <ngx-slick-carousel class="carousel" 
+    #slickModal="slick-carousel" 
+    [config]="slideConfig" 
+    (init)="slickInit($event)"
+    (breakpoint)="breakpoint($event)"
+    (afterChange)="afterChange($event)"
+    (beforeChange)="beforeChange($event)">
+<div ngxSlickItem *ngFor="let slide of totalItems" style="max-width:253px;padding: 5px;" class="slide">
 
-</a>
-                  <figcaption>
-                  <div class="w3l-action-icon"> <i class="fa fa-play-circle" aria-hidden="true"></i></div>
-                             
-      
-           <h2>Holy <span>Sadie</span></h2>
-        <p>Sadie never took her eyes off me.She had a dark soul.</p>
-      
-      </figcaption> 
-                  </figure>
-                  
-               </div>
-             
-    </div> -->
-             <div *ngFor="let item of items;let i = index">
-             <owl-item-component *ngIf="i < 5"  [itemInfo]="item"></owl-item-component>
-             <ul class="flex-direction-nav"><li><a class="flex-prev" href="#">Previous</a></li><li><a class="flex-next" href="#">Next</a></li></ul>
-             </div>
-
-             <!-- <div class="item">
-               <div class="movie-beta__item ">
-              
-               <figure class="effect-sadie">
-              
-                  <a href="single.html" class="hvr-shutter-out-horizontal"><img alt='' src="">
-                   
-
-</a>
-                  <figcaption>
-                  <div class="w3l-action-icon"> <i class="fa fa-play-circle" aria-hidden="true"></i></div>
-                    <h2>Holy <span>Sadie</span></h2>
-        <p></p>
-      
-      </figcaption> 
-                  </figure>
-                  
-               </div>
-             </div>
-             <div class="item">
-               <div class="movie-beta__item ">
-              
-               <figure class="effect-sadie">
-              
-                  <a href="single.html" class="hvr-shutter-out-horizontal"><img alt='' src="/assets/images/movie/movie-sample4.jpg">
-                   
-
-</a>
-                  <figcaption>
-                  <div class="w3l-action-icon"> <i class="fa fa-play-circle" aria-hidden="true"></i></div>
-                             
-         <h2>Holy <span>Sadie</span></h2>
-        <p>Sadie never took her eyes off me.She had a dark soul.</p>
-      
-      </figcaption> 
-                  </figure>
-                  
-               </div>
-                </div>
-                  <div class="item">
-               <div class="movie-beta__item ">
-              
-               <figure class="effect-sadie">
-              
-                  <a href="single.html" class="hvr-shutter-out-horizontal"><img alt='' src="/assets/images/movie/movie-sample5.jpg">
-                   
-
-</a>
-                  <figcaption>
-                  <div class="w3l-action-icon"> <i class="fa fa-play-circle" aria-hidden="true"></i></div>
-                          <h2>Holy <span>Sadie</span></h2>
-        <p>Sadie never took her eyes off me.She had a dark soul.</p>
-      
-      </figcaption> 
-                  </figure>
-                  
-               </div>
+      <div class="item">
+            <div class="movie-beta__item ">
+           
+            <figure class="effect-sadie">
+               <a href="single.html" class="hvr-shutter-out-horizontal"><img class="thumbnail" alt='' src={{assetUrl+slide.thumbnail}}>
+          </a>
+            <figcaption>
+               <div class="w3l-action-icon"> <i class="fa fa-play-circle" aria-hidden="true"></i></div>
+               <h2>{{slide.title}}<span>({{slide.year}})</span></h2>
+               <p>{{slide.genres}}</p>
+            </figcaption> 
+               </figure>
             </div>
-            
-              <div class="item">
-               
-               <div class="movie-beta__item ">
-              
-               <figure class="effect-sadie">
-              
-                  <a href="single.html" class="hvr-shutter-out-horizontal"><img alt='' src="/assets/images/movie/movie-sample6.jpg">
-                   
+          </div>
 
-</a>
-                  <figcaption>
-                  <div class="w3l-action-icon"> <i class="fa fa-play-circle" aria-hidden="true"></i></div>
-                             
-      
-           <h2>Holy <span>Sadie</span></h2>
-        <p>Sadie never took her eyes off me.She had a dark soul.</p>
-      
-      </figcaption> 
-                  </figure>
-                  
-               </div>
-               </div>
-                  <div class="item">
-               
-               <div class="movie-beta__item ">
-              
-               <figure class="effect-sadie">
-              
-                  <a href="single.html" class="hvr-shutter-out-horizontal"><img alt='' src="/assets/images/movie/movie-sample1.jpg">
-                   
+</div>
+</ngx-slick-carousel>
 
-</a>
-                  <figcaption>
-                  <div class="w3l-action-icon"> <i class="fa fa-play-circle" aria-hidden="true"></i></div>
-                             
-        
-           <h2>Holy <span>Sadie</span></h2>
-        <p>Sadie never took her eyes off me.She had a dark soul.</p>
-      
-      </figcaption> 
-                  </figure>
-                  
-               </div>
-               </div>
-                  <div class="item">
-               
-               <div class="movie-beta__item ">
-              
-               <figure class="effect-sadie">
-              
-                  <a href="single.html" class="hvr-shutter-out-horizontal"><img alt='' src="/assets/images/movie/movie-sample1.jpg">
-                   
-
-</a>
-                  <figcaption>
-                  <div class="w3l-action-icon"> <i class="fa fa-play-circle" aria-hidden="true"></i></div>
-                             
-        
-           <h2>Holy <span>Sadie</span></h2>
-        <p>Sadie never took her eyes off me.She had a dark soul.</p>
-      
-      </figcaption> 
-                  </figure>
-                  
-               </div>
-               </div>
-                  <div class="item">
-               
-               <div class="movie-beta__item ">
-              
-               <figure class="effect-sadie">
-              
-                  <a href="single.html" class="hvr-shutter-out-horizontal"><img alt='' src="/assets/images/movie/movie-sample1.jpg">
-                   
-
-</a>
-                  <figcaption>
-                  <div class="w3l-action-icon"> <i class="fa fa-play-circle" aria-hidden="true"></i></div>
-                             
-        
-           <h2>Holy <span>Sadie</span></h2>
-        <p>Sadie never took her eyes off me.She had a dark soul.</p>
-      
-      </figcaption> 
-                  </figure>
-                  
-               </div>
-               </div> -->
-               
-    </div>
-    <owl-carousel
-      [options]="{items: 3, dots: false, navigation: false}"
-
-      [items]="images"
-
-      [carouselClasses]="['owl-theme', 'row', 'sliding']">
-      <div class="item" *ngFor="let image of images;let i = index">
-          <div class="thumbnail-image" [ngStyle]="{'background-image':'url(//assets/images/news.jpg)'}">
-          <img [src]="image"></div>
-      </div>
-      </owl-carousel>
+<!-- <button (click)="removeSlide()">Remove</button>
+<button (click)="slickModal.slickGoTo(2)">slickGoto 2</button>
+<button (click)="slickModal.unslick()">unslick</button> -->
+<!-- slickPlay -->

@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-
+import { Component, OnInit, Input, ViewChild, ElementRef} from '@angular/core';
+// import {AnimationBuilder} from '@angular/animations';
 import { Constants } from '../../constants'
 
 @Component({
@@ -9,7 +9,9 @@ import { Constants } from '../../constants'
 })
 export class OwlItemComponent implements OnInit {
 @Input() itemInfo = {};
-  constructor() { }
+@ViewChild('carousel') private carousel : ElementRef;
+  constructor(
+  ) { }
 
   assetUrl = ""
   ngOnInit() {

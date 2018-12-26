@@ -27,10 +27,7 @@ export class HomeComponent implements OnInit {
 items = []
 itemzs = []  
 images = ["/assets/images/movie/movie-sample1.jpg","/assets/images/movie/movie-sample1.jpg","/assets/images/movie/movie-sample1.jpg","/assets/images/movie/movie-sample1.jpg","/assets/images/movie/movie-sample1.jpg","/assets/images/movie/movie-sample1.jpg","/assets/images/movie/movie-sample1.jpg"]
-ngOnInit() {
-    
-    
-  }
+ngOnInit() {}
 toggle() {
     
     // $(window).load(function(){
@@ -39,7 +36,7 @@ toggle() {
       start: function(slider){
         $('body').removeClass('loading');
       }
-      });
+    });
     // });
     // $(document).ready(function() { 
     //   $("#owl-demo").owlCarousel({
@@ -66,5 +63,5 @@ toggle() {
       });
 
 // });
-}
+  }
 }

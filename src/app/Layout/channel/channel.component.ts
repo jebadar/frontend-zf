@@ -2,13 +2,13 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { LayoutService } from '../layout.service';
 import { Constants } from '../../constants'
 
-
 @Component({
-  selector: 'movie-component',
-  templateUrl: './movie.component.html',
-  styleUrls: ['./movie.component.css']
+  selector: 'channel-component',
+  templateUrl: './channel.component.html',
+  styleUrls: ['./channel.component.css']
 })
-export class MovieComponent implements OnInit {
+export class ChannelComponent implements OnInit {
+
   @ViewChild('slickModal') slickModal;
   constructor(
     private layoutService: LayoutService
@@ -20,18 +20,15 @@ export class MovieComponent implements OnInit {
     this.assetUrl = Constants.ASSET_URL;
     
     // get movies banners
-    this.layoutService.getMovies().subscribe((result:response)=> {
+    this.layoutService.getLiveChannel().subscribe((result:response)=> {
       console.log(result)
       this.totalItems = result.data
       // set first 6 elements
       setTimeout(() =>{
-        this.slickModal.slickPlay()
+        // this.slickModal.slickPlay()
       },500)
     })
   }
-
-  
-
 
   slides = [
     {img: "http://placehold.it/350x150/000000"},
@@ -67,8 +64,8 @@ export class MovieComponent implements OnInit {
     console.log('beforeChange');
   }
 
-
 }
+
 interface response {
   data: []
 }

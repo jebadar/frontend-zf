@@ -32,5 +32,43 @@ export class LayoutService {
      let observable = this.httpServicesService.get('videos/byfeed/Movies');
       return observable
   }
-
+  // tvchannels/domain?active=true&limit=32&offset=0
+  getLiveChannel() {
+    let observable = this.httpServicesService.get('tvchannels/domain?active=true&limit=32&offset=0');
+     return observable
+ }
+  //  videos/byfeed/News?limit=70&offset=0
+  getNewsChannel() {
+    let observable = this.httpServicesService.get('videos/byfeed/News?limit=70&offset=0');
+    return observable
+  }
+  getTalkshowsChannel() {
+    let observable = this.httpServicesService.get('programs/domain/TalkShow');
+    return observable
+  }
+  // videos/byfeed/Entertainment
+  getEntertainmentChannel() {
+    let observable = this.httpServicesService.get('videos/byfeed/Entertainment');
+    return observable
+  }
+  // videos/byfeed/Sports
+  getSportsChannel() {
+    let observable = this.httpServicesService.get('videos/byfeed/Sports');
+    return observable
+  }
+  // videos/byfeed/Kids
+  getKidsChannel() {
+    let observable = this.httpServicesService.get('videos/byfeed/Kids');
+    return observable
+  }
+  // videos/byfeed/Drama
+  getDramaChannel() {
+    let observable = this.httpServicesService.get('videos/byfeed/Drama');
+    return observable
+  }
+  // videos/byfeed/Islamic
+  getIslamicChannel() {
+    let observable = this.httpServicesService.get('videos/byfeed/Islamic');
+    return observable
+  }
 }
