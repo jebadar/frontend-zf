@@ -8,7 +8,7 @@ import { MovieComponent } from './movie/movie.component';
 // Import your library
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { NewsComponent } from './news/news.component';
-import { ChannelComponent } from './channel/channel.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 @NgModule({
   declarations: [
@@ -16,14 +16,13 @@ import { ChannelComponent } from './channel/channel.component';
     LoginComponent,
     OwlItemComponent,
     MovieComponent,
-    NewsComponent,
-    ChannelComponent
+    NewsComponent
   ],
   imports: [
     CommonModule,
     OwlModule,
-    
-    SlickCarouselModule
+    SlickCarouselModule,
+    InfiniteScrollModule
   ]
 })
 export class LayoutModule { }

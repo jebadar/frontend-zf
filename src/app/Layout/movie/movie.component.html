@@ -1,4 +1,4 @@
-    <ngx-slick-carousel class="carousel" 
+    <ngx-slick-carousel class="carousel" *ngIf="loading === false"
     #slickModal="slick-carousel" 
     [config]="slideConfig" 
     (init)="slickInit($event)"
@@ -9,13 +9,17 @@
 
       <div class="item">
             <div class="movie-beta__item ">
-           
+               <!-- {{assetUrl+slide.thumbnail}} -->
+               <!-- "/assets/images/243x364.png" -->
             <figure class="effect-sadie">
-               <a href="single.html" class="hvr-shutter-out-horizontal"><img class="thumbnail" alt='' src={{assetUrl+slide.thumbnail}}>
-          </a>
-            <figcaption>
+               <a href="single.html" class="hvr-shutter-out-horizontal">
+
+                  <img class="thumbnail"  alt='' src={{assetUrl+slide.thumbnail}}>
+                  
+               </a>
+            <figcaption >
                <div class="w3l-action-icon"> <i class="fa fa-play-circle" aria-hidden="true"></i></div>
-               <h2>{{slide.title}}<span>({{slide.year}})</span></h2>
+               <h2>{{slide.title}}<span></span></h2>
                <p>{{slide.genres}}</p>
             </figcaption> 
                </figure>
@@ -24,7 +28,36 @@
 
 </div>
 </ngx-slick-carousel>
+<ngx-slick-carousel *ngIf="loading === true" class="carousel" 
+#slickModal="slick-carousel" 
+[config]="slideConfig" 
+(init)="slickInit($event)"
+(breakpoint)="breakpoint($event)"
+(afterChange)="afterChange($event)"
+(beforeChange)="beforeChange($event)">
+<div ngxSlickItem *ngFor="let slide of slides" style="max-width:253px;padding: 5px;" class="slide">
 
+  <div class="item">
+        <div class="movie-beta__item ">
+           <!-- {{assetUrl+slide.thumbnail}} -->
+           <!-- "/assets/images/243x364.png" -->
+        <figure class="effect-sadie">
+           <a href="single.html" class="hvr-shutter-out-horizontal">
+
+              <img class="thumbnail" alt='' src={{slide.img}}>
+       
+           </a>
+        <!-- <figcaption *ngIf="slide.title !== undefined">
+           <div class="w3l-action-icon"> <i class="fa fa-play-circle" aria-hidden="true"></i></div>
+           <h2>{{slide.title}}<span></span></h2>
+           <p>{{slide.genres}}</p>
+        </figcaption>  -->
+           </figure>
+        </div>
+      </div>
+
+</div>
+</ngx-slick-carousel>
 <!-- <button (click)="removeSlide()">Remove</button>
 <button (click)="slickModal.slickGoTo(2)">slickGoto 2</button>
 <button (click)="slickModal.unslick()">unslick</button> -->

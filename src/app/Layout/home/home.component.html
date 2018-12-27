@@ -1,5 +1,9 @@
 
-  <div class="wrapper">
+  <div class="wrapper search-results" infiniteScroll
+  [infiniteScrollDistance]="2"
+  [infiniteScrollThrottle]="50"
+  (scrolled)="onScroll()"
+  [scrollWindow]="true">
   
 
   
@@ -123,58 +127,49 @@
  <div class="clt"></div>     
  
          
-<section class="">
+<section >
 
 
-              <!-- general -->
- <div class="Latest-tv-series live-c">
-  
-  <div class="black-b">
-
-    
-      <a class="link link--kukuri" href="#" data-letters="Live Channel">Live Channel</a>
-
-    <section class="slider">
-      <div class="flexslider">
-        <ul class="slides">
-          <li style="display: block;">
-            <div class="agile_tv_series_grid news">
-            
-              
-              <div class="clearfix"> </div>
-              <div class="agileinfo_flexislider_grids">
-                <channel-component></channel-component>
-                <div class="clearfix"> </div>
-              </div>
+ <div *ngFor="let component of components">
+    <div class="Latest-tv-series live-c">
+        <div class="black-b">
+          <a class="link link--kukuri" href="#" attr.data-letters={{component.heading}}>{{component.heading}}</a>
+          <section class="slider">
+            <div class="flexslider">
+              <ul class="slides">
+                <li style="display: block;">
+                  <div class="agile_tv_series_grid news">
+                    <div class="clearfix"> </div>
+                    <div class="agileinfo_flexislider_grids">
+                      <!-- <channel-component></channel-component> -->
+                      <news-component [category]="component.name"></news-component>
+                      <div class="clearfix"> </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
             </div>
-          </li>
-          
-        </ul>
+          </section>
+        </div>
       </div>
-    </section>
-    
-  </div>
-</div>
-  
-   <div class="clt"></div>  
-<!-- //general -->
-<div class="Latest-tv-series">
-  
-  <div class="black-b">
-      <!-- <h2 class="page-heading">News</h2> -->
-      <a class="link link--kukuri" href="#" data-letters="News">News</a>
+      <div class="clt"></div> 
+ </div>
+  <!-- general -->
 
+  
+ 
+<!-- //general -->
+<!-- <div class="Latest-tv-series">
+  <div class="black-b">
+    <a class="link link--kukuri" href="#" data-letters="News">News</a>
     <section class="slider">
       <div class="flexslider">
         <ul class="slides">
           <li style="display:block;">
             <div class="agile_tv_series_grid ">
-            
-              
               <div class="clearfix"> </div>
               <div class="agileinfo_flexislider_grids">
                 <news-component [category]="'news'"></news-component>
-              
                 <div class="clearfix"> </div>
               </div>
             </div>
@@ -182,52 +177,14 @@
         </ul>
       </div>
     </section>
-    
-  </div>
-</div>
-   <div class="clt"></div>  
-
-
-           <!-- general -->
-  <!-- <div class="Latest-tv-series live-c">
-  
-  <div class="black-b">
-      <h2 class="page-heading">Talk Shows</h2>
-    <section class="slider">
-      <div class="flexslider">
-        <ul class="slides">
-          <li style="display:block;">
-            <div class="agile_tv_series_grid">
-            
-              
-              <div class="clearfix"> </div>
-              <div class="agileinfo_flexislider_grids">
-                  <news-component [category]="'talkshows'"></news-component>
-
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </section>
-    
   </div>
 </div> -->
-<!-- //general -->
+  <!-- <div class="clt"></div> -->
 
-
-
-<div class="clt"></div>  
-
-
-
-          <!-- general -->
-  <div class="Latest-tv-series">
-  
+  <!-- general -->
+  <!-- <div class="Latest-tv-series">
   <div class="movies black-b">
-      <!-- <h2 class="page-heading">Entertainment</h2> -->
-      <a class="link link--kukuri" href="#" data-letters="Entertainment">Entertainment</a>
-
+    <a class="link link--kukuri" href="#" data-letters="Entertainment">Entertainment</a>
     <section class="slider">
       <div class="flexslider">
         <ul class="slides">
@@ -237,28 +194,19 @@
                 <div class="clearfix"> </div>
               </div>
           </li>
-          
         </ul>
       </div>
     </section>
-    
   </div>
-</div>
+</div> -->
 <!-- //general -->
-  
-              
 
-<div class="clt"></div>  
-
-
+<!-- <div class="clt"></div> -->
 
 <!-- general -->
-<div class="Latest-tv-series">
-
+<!-- <div class="Latest-tv-series">
 <div class="movies black-b">
-<!-- <h2 class="page-heading">Drama</h2> -->
 <a class="link link--kukuri" href="#" data-letters="Drama">Drama</a>
-
 <section class="slider">
 <div class="flexslider">
 <ul class="slides">
@@ -274,21 +222,16 @@
 </section>
 
 </div>
-</div>
+</div> -->
 <!-- //general -->
 
 
-<div class="clt"></div>  
-
-
-
+<!-- <div class="clt"></div> -->
 <!-- general -->
-<div class="Latest-tv-series">
+<!-- <div class="Latest-tv-series">
 
 <div class="movies black-b">
-<!-- <h2 class="page-heading">Sports</h2> -->
 <a class="link link--kukuri" href="#" data-letters="Sports">Sports</a>
-
 <section class="slider">
 <div class="flexslider">
 <ul class="slides">
@@ -304,21 +247,19 @@
 </section>
 
 </div>
-</div>
+</div> -->
 <!-- //general -->
 
 
-<div class="clt"></div>  
+<!-- <div class="clt"></div>   -->
 
 
 
 <!-- general -->
-<div class="Latest-tv-series">
+<!-- <div class="Latest-tv-series">
 
 <div class="movies black-b">
-<!-- <h2 class="page-heading">Kids</h2> -->
 <a class="link link--kukuri" href="#" data-letters="Kids">Kids</a>
-
 <section class="slider">
 <div class="flexslider">
 <ul class="slides">
@@ -334,21 +275,14 @@
 </section>
 
 </div>
-</div>
+</div> -->
 <!-- //general -->
     
-
-<div class="clt"></div>  
-
-
-
+<!-- <div class="clt"></div> -->
 <!-- general -->
-<div class="Latest-tv-series">
-
+<!-- <div class="Latest-tv-series">
 <div class="movies black-b">
-<!-- <h2 class="page-heading">Islamic</h2> -->
 <a class="link link--kukuri" href="#" data-letters="Islamic">Islamic</a>
-
 <section class="slider">
 <div class="flexslider">
 <ul class="slides">
@@ -364,24 +298,18 @@
 </section>
 
 </div>
-</div>
+</div> -->
 <!-- //general -->
-      </section>
-      
-    
+</section>
  <div class="clearfix"></div>
 <div class="clt"></div>  
       <footer class="footer-wrapper">
           <section class="container">
               <div class="col-xs-12 col-md-6 footer-info">
-              
-              <p class="heading-special--small">Mash App<br></p>
-
-<div style="clear:both"></div>
-<p class="copy"> <label class="green"></label> Design and Developed by zaryans tech</p>  
-
+                <p class="heading-special--small">Mash App<br></p>
+                <div style="clear:both"></div>
+                <p class="copy"> <label class="green"></label> Design and Developed by zaryans tech</p>  
              </div>
-           
               <div class="col-xs-12 col-md-6">
                   <div class="footer-info">
                      

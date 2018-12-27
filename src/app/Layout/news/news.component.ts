@@ -18,12 +18,15 @@ export class NewsComponent implements OnInit {
   items = [];
   totalItems = [];
   assetUrl = "";
+  loading:boolean = false;
   ngOnInit() {
     this.assetUrl = Constants.ASSET_URL;
+    this.loading = true
     if(this.category === 'news') {
       this.layoutService.getNewsChannel().subscribe((result:response)=> {
         console.log(result)
         this.totalItems = result.data
+        this.loading = false 
         // set first 6 elements
         setTimeout(() =>{
           // this.slickModal.slickPlay()
@@ -33,6 +36,8 @@ export class NewsComponent implements OnInit {
       this.layoutService.getTalkshowsChannel().subscribe((result:response)=> {
         console.log(result)
         this.totalItems = result.data
+        this.loading = false 
+
         // set first 6 elements
         setTimeout(() =>{
           // this.slickModal.slickPlay()
@@ -42,6 +47,8 @@ export class NewsComponent implements OnInit {
       this.layoutService.getEntertainmentChannel().subscribe((result:response)=> {
         console.log(result)
         this.totalItems = result.data
+        this.loading = false 
+
         // set first 6 elements
         setTimeout(() =>{
           // this.slickModal.slickPlay()
@@ -51,8 +58,10 @@ export class NewsComponent implements OnInit {
       this.layoutService.getDramaChannel().subscribe((result:response)=> {
         console.log(result)
         this.totalItems = result.data
+        this.loading = false 
+
         // set first 6 elements
-        setTimeout(() =>{
+        setTimeout(() => {
           // this.slickModal.slickPlay()
         },500)
       })
@@ -60,6 +69,8 @@ export class NewsComponent implements OnInit {
       this.layoutService.getKidsChannel().subscribe((result:response)=> {
         console.log(result)
         this.totalItems = result.data
+        this.loading = false 
+
         // set first 6 elements
         setTimeout(() =>{
           // this.slickModal.slickPlay()
@@ -69,6 +80,8 @@ export class NewsComponent implements OnInit {
       this.layoutService.getIslamicChannel().subscribe((result:response)=> {
         console.log(result)
         this.totalItems = result.data
+        this.loading = false 
+
         // set first 6 elements
         setTimeout(() =>{
           // this.slickModal.slickPlay()
@@ -78,6 +91,19 @@ export class NewsComponent implements OnInit {
       this.layoutService.getSportsChannel().subscribe((result:response)=> {
         console.log(result)
         this.totalItems = result.data
+        this.loading = false 
+
+        // set first 6 elements
+        setTimeout(() =>{
+          // this.slickModal.slickPlay()
+        },500)
+      })
+    } else if(this.category === 'channel') {
+      this.layoutService.getLiveChannel().subscribe((result:response)=> {
+        console.log(result)
+        this.totalItems = result.data
+        this.loading = false 
+
         // set first 6 elements
         setTimeout(() =>{
           // this.slickModal.slickPlay()
@@ -88,12 +114,12 @@ export class NewsComponent implements OnInit {
   }
 
   slides = [
-    {img: "http://placehold.it/350x150/000000"},
-    {img: "http://placehold.it/350x150/111111"},
-    {img: "http://placehold.it/350x150/333333"},
-    {img: "http://placehold.it/350x150/666666"},
-    {img: "http://placehold.it/350x150/777777"},
-    {img: "http://placehold.it/350x150/777777"}
+    {img: "/assets/images/243x194.77.png"},
+    {img: "/assets/images/243x194.77.png"},
+    {img: "/assets/images/243x194.77.png"},
+    {img: "/assets/images/243x194.77.png"},
+    {img: "/assets/images/243x194.77.png"},
+    {img: "/assets/images/243x194.77.png"}
   ];
   slideConfig = {"slidesToShow": 4, "slidesToScroll": 4};
   

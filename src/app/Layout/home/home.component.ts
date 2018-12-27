@@ -1,7 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { LoginComponent } from '../login/login.component';
-import {OwlCarousel} from 'ngx-owl-carousel';
-import { LayoutService } from '../layout.service';
+
 
 declare var $ :any;
 
@@ -12,56 +10,49 @@ declare var $ :any;
 })
 
 export class HomeComponent implements OnInit {
-  @ViewChild('owlElement') owlElement: OwlCarousel 
-  fun() {
-    this.owlElement.next([200])
-    //duration 200ms
-  }
-  object = {          
-    link: "http://lorempixel.com/100/100"
-  }
+
   constructor(
-    private layoutService: LayoutService
   ) {
 }
-items = []
-itemzs = []  
-images = ["/assets/images/movie/movie-sample1.jpg","/assets/images/movie/movie-sample1.jpg","/assets/images/movie/movie-sample1.jpg","/assets/images/movie/movie-sample1.jpg","/assets/images/movie/movie-sample1.jpg","/assets/images/movie/movie-sample1.jpg","/assets/images/movie/movie-sample1.jpg"]
-ngOnInit() {}
-toggle() {
-    
-    // $(window).load(function(){
-      $('.flexslider').flexslider({
-      animation: "slide",
-      start: function(slider){
-        $('body').removeClass('loading');
-      }
-    });
-    // });
-    // $(document).ready(function() { 
-    //   $("#owl-demo").owlCarousel({
-     
-    //     autoPlay: 3000, 
-     
-    //     items : 5,
-    //     itemsDesktop : [640,4],
-    //     itemsDesktopSmall : [414,3],
-    // navigation : true,
-    //     navigationText : ['<span class="fa-stack"><i class="fa  fa-stack-1x"></i><i class="fa fa-angle-left fa-stack-1x fa-inverse"></i></span>','<span class="fa-stack"><i class="fa  fa-stack-1x"></i><i class="fa fa-angle-right fa-stack-1x fa-inverse"></i></span>'],
-    // });
-    
-    // }); 
-    $('.login-window').click(function (e){
-      e.preventDefault();
-      $('.overlay').removeClass('close').addClass('open');
-    });
-    // $(document).ready(function(){
-
-      $(".detailDiv").hide();
-      $('.button').click(function(){
-      $(".detailDiv").slideToggle();
-      });
-
-// });
+ngOnInit() {
+this.components.push(this.componentsTotal[0])
+}
+onScroll() {
+  console.log('scrolled!!');
+  if(this.components.length != this.componentsTotal.length) {
+    this.components.push(this.componentsTotal[this.components.length])
   }
+  debugger
+}
+components = []
+componentsTotal = [
+  {
+    name:"channel",
+    heading:"Live Channel"
+  },
+  {
+    name:"news",
+    heading:"News"
+  },
+  {
+    name:"entertainment",
+    heading:"Entertainment"
+  },
+  {
+    name:"drama",
+    heading:"Drama"
+  },
+  {
+    name:"sports",
+    heading:"Sports"
+  },
+  {
+    name:"kids",
+    heading:"Kids"
+  },
+  {
+    name:"islamic",
+    heading:"Islamic"
+  }
+]
 }

@@ -1,12 +1,3 @@
-// import { Injectable } from '@angular/core';
-
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class LayoutService {
-
-//   constructor() { }
-// }
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 // import 'rxjs/add/operator/map';
@@ -29,7 +20,7 @@ export class LayoutService {
   ) { }
 
   getMovies() {
-     let observable = this.httpServicesService.get('videos/byfeed/Movies');
+     let observable = this.httpServicesService.get('videos/byfeed/Movies?active=true&limit=8&offset=0');
       return observable
   }
   // tvchannels/domain?active=true&limit=32&offset=0
@@ -48,27 +39,27 @@ export class LayoutService {
   }
   // videos/byfeed/Entertainment
   getEntertainmentChannel() {
-    let observable = this.httpServicesService.get('videos/byfeed/Entertainment');
+    let observable = this.httpServicesService.get('videos/byfeed/Entertainment?limit=70&offset=0');
     return observable
   }
   // videos/byfeed/Sports
   getSportsChannel() {
-    let observable = this.httpServicesService.get('videos/byfeed/Sports');
+    let observable = this.httpServicesService.get('videos/byfeed/Sports?limit=70&offset=0');
     return observable
   }
   // videos/byfeed/Kids
   getKidsChannel() {
-    let observable = this.httpServicesService.get('videos/byfeed/Kids');
+    let observable = this.httpServicesService.get('videos/byfeed/Kids?limit=70&offset=0');
     return observable
   }
   // videos/byfeed/Drama
   getDramaChannel() {
-    let observable = this.httpServicesService.get('videos/byfeed/Drama');
+    let observable = this.httpServicesService.get('videos/byfeed/Drama?limit=70&offset=0');
     return observable
   }
   // videos/byfeed/Islamic
   getIslamicChannel() {
-    let observable = this.httpServicesService.get('videos/byfeed/Islamic');
+    let observable = this.httpServicesService.get('videos/byfeed/Islamic?limit=70&offset=0');
     return observable
   }
 }
