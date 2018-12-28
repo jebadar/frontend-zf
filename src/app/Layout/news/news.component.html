@@ -136,7 +136,7 @@
       </div>
 </div>
 </ngx-slick-carousel>
-<ngx-slick-carousel *ngIf="loading === true" class="carousel" 
+<ngx-slick-carousel *ngIf="loading === true || category === 'loading'" class="carousel" 
 #slickModal="slick-carousel"
 [config]="slideConfig" 
 (init)="slickInit($event)"
@@ -146,7 +146,7 @@
 <div ngxSlickItem *ngFor="let slide of slides " style="max-width:253px;padding: 5px;" class="slide">
     <div class="col-md-12 w3l-movie-gride-agile">
         <a href="single.html" class="hvr-shutter-out-horizontal"><img src={{slide.img}} title="album-name" class="img-responsive" alt=" " />
-          <div class="w3l-action-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
+          <!-- <div class="w3l-action-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></div> -->
         </a>        
       </div>
 </div>

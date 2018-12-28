@@ -23,6 +23,7 @@ export class MovieComponent implements OnInit {
   ngOnInit() {
     this.assetUrl = Constants.ASSET_URL;
     this.loading = true
+    this.changeSlide()
     // get movies banners
     this.layoutService.getMovies().subscribe((result:response)=> {
       console.log(result)
@@ -39,17 +40,33 @@ export class MovieComponent implements OnInit {
 
 
   slides = [
-    {img: "/assets/images/243x364.png"},
-    {img: "/assets/images/243x364.png"},
-    {img: "/assets/images/243x364.png"},
-    {img: "/assets/images/243x364.png"},
-    {img: "/assets/images/243x364.png"},
-    {img: "/assets/images/243x364.png"}
+    {img: "/assets/images/243x364_try.png"},
+    {img: "/assets/images/243x364_try.png"},
+    {img: "/assets/images/243x364_try.png"},
+    {img: "/assets/images/243x364_try.png"},
+    {img: "/assets/images/243x364_try.png"},
+    {img: "/assets/images/243x364_try.png"},
+    {img: "/assets/images/243x364_try.png"},
+    {img: "/assets/images/243x364_try.png"}
   ];
-  slideConfig = {"slidesToShow": 4, "slidesToScroll": 4};
-  
+  slideConfig = {"slidesToShow": 4, "slidesToScroll": 1};
+  changeSlide() {
+    var counter = 0
+    setInterval(() => {
+      if(counter == 0) 
+        this.slides[counter].img = "/assets/images/243x364_dark.png"
+        else {
+          this.slides[counter-1].img = "/assets/images/243x364_try.png"
+          this.slides[counter].img = "/assets/images/243x364_dark.png"
+        }
+        counter ++
+        if(counter > 7) {
+          counter = 0
+        }
+    },300)
+  }
   addSlide() {
-    this.slides.push({img: "http://placehold.it/350x150/777777"})
+    this.slides.push({img: ""})
   }
   
   removeSlide() {

@@ -22,7 +22,6 @@ onScroll() {
   if(this.components.length != this.componentsTotal.length) {
     this.components.push(this.componentsTotal[this.components.length])
   }
-  debugger
 }
 components = []
 componentsTotal = [
@@ -53,6 +52,10 @@ componentsTotal = [
   {
     name:"islamic",
     heading:"Islamic"
+  },
+  {
+    name:"loading",
+    heading:"Loading"
   }
 ]
 }

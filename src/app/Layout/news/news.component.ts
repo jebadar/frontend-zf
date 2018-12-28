@@ -20,6 +20,7 @@ export class NewsComponent implements OnInit {
   assetUrl = "";
   loading:boolean = false;
   ngOnInit() {
+    this.changeSlide()
     this.assetUrl = Constants.ASSET_URL;
     this.loading = true
     if(this.category === 'news') {
@@ -119,10 +120,26 @@ export class NewsComponent implements OnInit {
     {img: "/assets/images/243x194.77.png"},
     {img: "/assets/images/243x194.77.png"},
     {img: "/assets/images/243x194.77.png"},
+    {img: "/assets/images/243x194.77.png"},
+    {img: "/assets/images/243x194.77.png"},
     {img: "/assets/images/243x194.77.png"}
   ];
-  slideConfig = {"slidesToShow": 4, "slidesToScroll": 4};
-  
+  slideConfig = {"slidesToShow": 5, "slidesToScroll": 1};
+  changeSlide() {
+    var counter = 0
+    setInterval(() => {
+      if(counter == 0) 
+        this.slides[counter].img = "/assets/images/243x194.77_light.png"
+        else {
+          this.slides[counter-1].img = "/assets/images/243x194.77.png"
+          this.slides[counter].img = "/assets/images/243x194.77_light.png"
+        }
+        counter ++
+        if(counter > 7) {
+          counter = 0
+        }
+    },300)
+  }
   addSlide() {
     this.slides.push({img: "http://placehold.it/350x150/777777"})
   }

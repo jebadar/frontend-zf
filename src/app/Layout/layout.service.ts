@@ -30,7 +30,7 @@ export class LayoutService {
  }
   //  videos/byfeed/News?limit=70&offset=0
   getNewsChannel() {
-    let observable = this.httpServicesService.get('videos/byfeed/News?limit=70&offset=0');
+    let observable = this.httpServicesService.get('videos/byfeed/News?limit=7&offset=0');
     return observable
   }
   getTalkshowsChannel() {
@@ -39,27 +39,27 @@ export class LayoutService {
   }
   // videos/byfeed/Entertainment
   getEntertainmentChannel() {
-    let observable = this.httpServicesService.get('videos/byfeed/Entertainment?limit=70&offset=0');
+    let observable = this.httpServicesService.get('videos/byfeed/Entertainment?limit=7&offset=0');
     return observable
   }
   // videos/byfeed/Sports
   getSportsChannel() {
-    let observable = this.httpServicesService.get('videos/byfeed/Sports?limit=70&offset=0');
+    let observable = this.httpServicesService.get('videos/byfeed/Sports?limit=7&offset=0');
     return observable
   }
   // videos/byfeed/Kids
   getKidsChannel() {
-    let observable = this.httpServicesService.get('videos/byfeed/Kids?limit=70&offset=0');
+    let observable = this.httpServicesService.get('videos/byfeed/Kids?limit=7&offset=0');
     return observable
   }
   // videos/byfeed/Drama
   getDramaChannel() {
-    let observable = this.httpServicesService.get('videos/byfeed/Drama?limit=70&offset=0');
+    let observable = this.httpServicesService.get('videos/byfeed/Drama?limit=7&offset=0');
     return observable
   }
   // videos/byfeed/Islamic
   getIslamicChannel() {
-    let observable = this.httpServicesService.get('videos/byfeed/Islamic?limit=70&offset=0');
+    let observable = this.httpServicesService.get('videos/byfeed/Islamic?limit=7&offset=0');
     return observable
   }
 }

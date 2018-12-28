@@ -6,7 +6,7 @@ let STORAGE_URL;
 
 if(window.location.hostname.indexOf("zedflix.")>-1){
     env="prod";
-} else if (window.location.hostname.indexOf("172.18.11.242.")>-1){
+} else if (window.location.hostname.indexOf("172.18.11.242")>-1){
     env="stage";
 } 
 
