@@ -35,25 +35,22 @@
               "./node_modules/owl.carousel/dist/assets/owl.theme.default.css"
             ],
             "scripts": [
-           "src/assets/js/external/jquery-1.10.1.min.js",
-           "node_modules/slick-carousel/slick/slick.min.js",
-           "src/assets/js/external/modernizr.custom.js",
-            
-           "src/assets/netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js",
-            
-            
-           "src/assets/rs-plugin/js/jquery.themepunch.revolution.min.js",
-           "src/assets/rs-plugin/js/jquery.themepunch.plugins.min.js",
-           "src/assets/js/external/jquery-migrate-1.2.1.min.js",
-           "src/assets/js/jquery.mobile.menu.js",
-           "src/assets/js/external/jquery.selectbox-0.2.min.js",
-           "src/assets/js/external/jquery.raty.js",
-           "src/assets/js/external/form-element.js",
-           "src/assets/js/form.js",
-           "src/assets/js/external/twitterfeed.js",
-           "src/assets/js/custom.js",
-           "src/assets/js/jquery.flexslider.js"
-           ]
+              "src/assets/js/external/jquery-1.10.1.min.js",
+              "node_modules/slick-carousel/slick/slick.min.js",
+              "src/assets/js/external/modernizr.custom.js",
+              "src/assets/netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js",
+              "src/assets/rs-plugin/js/jquery.themepunch.revolution.min.js",
+              "src/assets/rs-plugin/js/jquery.themepunch.plugins.min.js",
+              "src/assets/js/external/jquery-migrate-1.2.1.min.js",
+              "src/assets/js/jquery.mobile.menu.js",
+              "src/assets/js/external/jquery.selectbox-0.2.min.js",
+              "src/assets/js/external/jquery.raty.js",
+              "src/assets/js/external/form-element.js",
+              "src/assets/js/form.js",
+              "src/assets/js/external/twitterfeed.js",
+              "src/assets/js/custom.js",
+              "src/assets/js/jquery.flexslider.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -126,6 +123,24 @@
             "exclude": [
               "**/node_modules/**"
             ]
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/frontendZF-server",
+            "main": "src/main.server.ts",
+            "tsConfig": "src/tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
+            }
           }
         }
       }

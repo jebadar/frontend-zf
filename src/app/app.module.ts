@@ -20,8 +20,9 @@ import { InterceptorService } from '../app/app-services/interceptor.service'
     AppComponent
   ],
   imports: [
+    BrowserModule.withServerTransition({appId: 'frontend-zf'}),
     HttpClientModule,
-    BrowserModule,
+    // BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     LayoutModule,
     OwlModule
